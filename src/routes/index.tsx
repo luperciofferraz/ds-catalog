@@ -10,16 +10,8 @@ const Routes: React.FC = () => {
         
         <Stack.Navigator>
 
-            <Stack.Screen 
-                name="Home" 
-                component={Home} 
-                options = {{headerShown: false}}
-            />
-            <Stack.Screen 
-                name="Catalog" 
-                component={Catalog} 
-                options = {{headerShown: true}}
-            />
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Catalog" component={Catalog} />
 
         </Stack.Navigator>
     );

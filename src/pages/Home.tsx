@@ -1,23 +1,49 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { theme, text } from '../styles';
+import { useNavigation } from '@react-navigation/native';
 
+import arrow from '../assets/arrow.png';
+import draw from '../assets/draw.png';
 
-const Home: React.FC = ( { navigation } ) => {
+const Home: React.FC = () => {
+
+    const navigation = useNavigation();
 
     return (
 
-        <View>
+        <View style = {theme.container}>
 
-            <Text>Home Page</Text>
-            
-            <TouchableOpacity
-            
-                onPress={() => navigation.navigate("Catalog")}
-            >
+            <View style = {theme.card}>
 
-                <Text>Clique Aqui</Text>
+                <Image source={draw} style={theme.draw} />
 
-            </TouchableOpacity>
+                <View style={theme.textContainer} >
+
+                    <Text style = {text.bold}>Conheça o melhor catálogo de produtos</Text>
+                    <Text style = {text.regular}>Ajudaremos você a encontrar os melhores produtos disponíveis no mercado.</Text>
+
+                </View>
+
+                <TouchableOpacity 
+                    
+                    style={theme.primaryButton} 
+                    activeOpacity={0.8}
+                    onPress={() => navigation.navigate("Catalog")}
+                >
+
+                    <Text style={text.primaryText}>INICIE A SUA BUSCA</Text>
+
+                    <View style={theme.arrowContainer}>
+
+                        <Image source={arrow} />
+                    
+                    </View>
+
+                </TouchableOpacity>
+
+            </View>
+
         </View>
 
     );
