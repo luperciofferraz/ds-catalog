@@ -57,7 +57,13 @@ const theme = StyleSheet.create({
 
         padding: 20,
 
-    },    
+    },  
+    
+    scrollContainer: {
+
+        padding: 10,
+        
+    },
 
     card: {
 
