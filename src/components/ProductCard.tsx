@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ImageSourcePropType, TouchableOpacity, Image } from 'react-native';
+import { text, theme } from '../styles';
 
 interface ProductProps  {
 
@@ -13,16 +14,16 @@ const ProductCard: React.FC<ProductProps> = ({ id, name, imgUrl, price}) => {
 
     return (
 
-        <TouchableOpacity>
+        <TouchableOpacity style={theme.productCard}>
 
             <Image source={imgUrl} />
 
-            <View>
-                <Text>{name}</Text>
+            <View style={theme.productDescription}>
+                <Text style={text.productName}>{name}</Text>
 
-                <View>
-                    <Text>R$</Text>
-                    <Text>{price}</Text>
+                <View style={theme.priceContainer}>
+                    <Text style={text.currency}>R$</Text>
+                    <Text style={text.productPrice}>{price}</Text>
                 </View>
             </View>
             
