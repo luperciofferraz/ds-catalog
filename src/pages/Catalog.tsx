@@ -58,7 +58,7 @@ const Catalog: React.FC = () => {
 
         <ScrollView contentContainerStyle={theme.scrollContainer}>
 
-            <SearchInput placeholder="Nome do produto" search setSearch={setSearch} />
+            <SearchInput placeholder="Nome do produto" search={search} setSearch={setSearch} />
 
             {data.map((product) => (
 
