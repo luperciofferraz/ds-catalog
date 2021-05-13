@@ -181,6 +181,14 @@ const theme = StyleSheet.create({
 
     },
 
+    productImage: {
+
+        width: 140,
+        height: 140,
+        margin: 16,
+
+    },
+
     inputContainer: {
 
         width: "100%",
