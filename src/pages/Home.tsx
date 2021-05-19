@@ -16,8 +16,7 @@ const Home: React.FC = () => {
         <View style={theme.textContainer}>
           <Text style={text.bold}>Conheça o melhor catálogo de produtos</Text>
           <Text style={text.regular}>
-            Ajudaremos você a encontrar os melhores produtos disponíveis no
-            mercado.
+            Conheça nossa nova coleção, ela é incrível!
           </Text>
         </View>
         <TouchableOpacity

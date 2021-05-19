@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 import { Dimensions } from "react-native";
 
 const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
 
 const colors = {
   white: "#FFFFFF",
@@ -77,6 +78,22 @@ const text = StyleSheet.create({
   },
   logoutText: {
     color: colors.white,
+  },
+  uploadText: {
+    color: colors.white,
+    textTransform: "uppercase",
+    fontWeight: "bold",
+  },
+  fileSize: {
+    fontSize: 10,
+    color: "blue",
+    fontWeight: "300",
+    marginVertical: 5,
+  },
+  saveText: {
+    color: colors.white,
+    textTransform: "uppercase",
+    fontWeight: "bold",
   },
 });
 
@@ -222,7 +239,7 @@ const theme = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginVertical: 10,
+    marginVertical: 15,
   },
   // Button  component
   buttonTextContainer: {
@@ -263,6 +280,137 @@ const theme = StyleSheet.create({
   },
   toggle: {
     marginLeft: -50,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  deleteBtn: {
+    width: "48%",
+    height: 40,
+    borderWidth: 1,
+    borderColor: colors.red,
+    marginVertical: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+  },
+  deleteText: {
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    color: colors.red,
+  },
+  editBtn: {
+    width: "48%",
+    height: 40,
+    borderWidth: 1,
+    borderColor: colors.mediumGray,
+    marginVertical: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+  },
+  editText: {
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    color: colors.mediumGray,
+  },
+  // Form Product
+  formContainer: {
+    width: deviceWidth,
+    padding: 20,
+  },
+  formCard: {
+    width: "100%",
+    height: "90%",
+    backgroundColor: colors.white,
+    borderRadius: 20,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    alignItems: "center",
+    justifyContent: "space-around",
+    padding: 20,
+  },
+  selectInput: {
+    width: 290,
+    height: 50,
+    borderWidth: 1,
+    borderColor: colors.mediumGray,
+    borderRadius: 10,
+    padding: 10,
+    justifyContent: "center",
+  },
+  modalContainer: {
+    width: deviceWidth,
+    height: deviceHeight,
+    backgroundColor: "#00000033",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  modalContent: {
+    width: 300,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "50%",
+    padding: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  modalItem: {
+    width: "100%",
+    backgroundColor: colors.lightGray,
+    marginVertical: 5,
+    padding: 10,
+    borderRadius: 5,
+  },
+  uploadBtn: {
+    width: "100%",
+    height: 40,
+    backgroundColor: "#9E9E9E",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 5,
+  },
+  textArea: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: "#9E9E9E",
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    paddingTop: 15,
+    height: 200,
+  },
+  formInput: {
+    width: 290,
+    height: 50,
+    borderWidth: 1,
+    borderColor: colors.mediumGray,
+    borderRadius: 10,
+    padding: 10,
+    marginVertical: 15,
+  },
+  saveBtn: {
+    width: "48%",
+    height: 40,
+    backgroundColor: colors.primary,
+    marginVertical: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
   },
 });
 
@@ -306,4 +454,51 @@ const nav = StyleSheet.create({
   },
 });
 
-export { colors, theme, text, nav };
+const tabbar = StyleSheet.create({
+  container: {
+    width: deviceWidth,
+    height: 80,
+    backgroundColor: colors.white,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  pill: {
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    backgroundColor: colors.lightGray,
+    borderRadius: 30,
+  },
+  pillActive: {
+    backgroundColor: colors.bluePill,
+  },
+  pillText: {
+    fontWeight: "bold",
+    color: colors.mediumGray,
+  },
+  pillTextActive: {
+    color: colors.primary,
+  },
+});
+
+const admin = StyleSheet.create({
+  container: {
+    padding: 10,
+    alignItems: "center",
+  },
+  addButton: {
+    width: "100%",
+    height: 50,
+    backgroundColor: colors.primary,
+    margin: 10,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  addButtonText: {
+    color: colors.white,
+    textTransform: "uppercase",
+    fontWeight: "bold",
+  },
+});
+export { colors, theme, text, nav, tabbar, admin };

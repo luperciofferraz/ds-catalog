@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { View, Text, TouchableOpacity, Image } from "react-native";
+import { TouchableNativeFeedback } from "react-native-gesture-handler";
 import { nav, text } from "../styles";
 import { isAutenticated, doLogout } from "../services/auth";
 import menu from "../assets/menu.png";
@@ -48,7 +49,7 @@ const NavBar: React.FC = () => {
           <Image source={menu} />
           {show ? (
             <View style={nav.options}>
-              <TouchableOpacity
+              <TouchableNativeFeedback
                 style={nav.option}
                 onPress={() => navigate("Home")}
               >
@@ -60,8 +61,8 @@ const NavBar: React.FC = () => {
                 >
                   Home
                 </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
                 style={nav.option}
                 onPress={() => navigate("Catalog")}
               >
@@ -73,8 +74,8 @@ const NavBar: React.FC = () => {
                 >
                   Catálogo
                 </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
                 style={nav.option}
                 onPress={() => navigate("Login")}
               >
@@ -86,7 +87,7 @@ const NavBar: React.FC = () => {
                 >
                   ADM
                 </Text>
-              </TouchableOpacity>
+              </TouchableNativeFeedback>
             </View>
           ) : null}
         </TouchableOpacity>
