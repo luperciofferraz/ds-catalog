@@ -1,365 +1,309 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
 
-const deviceWidth = Dimensions.get('window').width;
+const deviceWidth = Dimensions.get("window").width;
 
 const colors = {
-
-    white: "#FFFFFF",
-    lightGray: "#F2F2F2",
-    mediumGray: "#9E9E9E",
-    darkGray: "#263238",
-    black: "#000000",
-    primary: "#407BEE",
-    secondary: "#33569B",
-    bluePill: "#407BFF61",
-    red: "#DF5753",
-    borderGray: "#E1E1E1"
-
-}
+  white: "#FFFFFF",
+  lightGray: "#F2F2F2",
+  mediumGray: "#9E9E9E",
+  darkGray: "#263238",
+  black: "#000000",
+  primary: "#407BEE",
+  secondary: "#33569B",
+  bluePill: "#407BFF61",
+  red: "#DF5753",
+  bottomLine: "#E1E1E1",
+};
 
 const text = StyleSheet.create({
-
-    regular: {
-
-        fontSize: 16,
-        fontWeight: "400",
-        textAlign: "center",
-        color: colors.mediumGray
-
-    },
-
-    bold: {
-
-        fontSize: 26,
-        fontWeight: "bold",
-        textAlign: "center",
-        marginBottom: 15,
-        color: colors.darkGray,
-    },
-
-    primaryText: {
-
-        fontSize: 14,
-        fontWeight: "bold",
-        textTransform: "uppercase",
-        color: colors.white,
-        marginLeft: 20
-    },
-
-    productName: {
-
-        fontSize: 16,
-        fontWeight: "bold"
-
-    },
-
-    currency: {
-
-        fontSize: 16,
-        fontWeight: "400",
-        color: colors.mediumGray
-
-    }, 
-
-    productPrice: {
-
-        fontSize: 30,
-        fontWeight: "bold",
-        color: colors.primary
-
-    },
-
-    goBackText: {
-
-        fontSize: 18,
-        fontWeight: "bold",
-        textTransform: "uppercase",
-        color: colors.darkGray,
-        marginLeft: 16,
-
-    },
-
-    productDetailsName: {
-
-        fontSize: 30,
-        fontWeight: "bold",
-        marginTop: 10,
-        color: colors.darkGray,
-
-    },
-
-    productDescripion: {
-
-        fontSize: 16,
-        color: colors.mediumGray,
-        fontWeight: "400",
-
-    },
-
+  regular: {
+    fontSize: 16,
+    fontWeight: "400",
+    textAlign: "center",
+    color: colors.mediumGray,
+  },
+  bold: {
+    fontSize: 26,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 15,
+    color: colors.darkGray,
+  },
+  primaryText: {
+    fontSize: 14,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    color: colors.white,
+    marginLeft: 20,
+  },
+  productTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  productPrice: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: colors.primary,
+  },
+  currency: {
+    fontSize: 16,
+    fontWeight: "400",
+    color: colors.mediumGray,
+    marginRight: 10,
+  },
+  productDetailTitle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
+  productDescription: {
+    fontSize: 16,
+    fontWeight: "400",
+    color: colors.mediumGray,
+  },
+  goBackText: {
+    fontWeight: "bold",
+    fontSize: 18,
+    textTransform: "uppercase",
+    color: colors.darkGray,
+    marginLeft: 16,
+  },
+  loginTitle: {
+    fontSize: 30,
+    color: colors.darkGray,
+    textTransform: "uppercase",
+    marginBottom: 50,
+  },
+  logoutText: {
+    color: colors.white,
+  },
 });
 
 const theme = StyleSheet.create({
-
-    container: {
-
-        flex: 1,
-
-        justifyContent: "center",
-
-        alignItems: "center",
-
-        padding: 20,
-
-    },  
-    
-    card: {
-
-        width: "100%",
-        height: "100%",
-        backgroundColor: colors.white,
-        borderRadius: 20,
-        alignItems: "center",
-        shadowColor: colors.black,
-        shadowOffset: {
-
-            width: 0,
-            height: 2,
-
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        justifyContent: "space-around"
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+  scrollContainer: {
+    padding: 10,
+  },
+  card: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: colors.white,
+    borderRadius: 20,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
     },
-
-
-    draw: {
-
-        width: 313,
-        height: 225,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  draw: {
+    width: 313,
+    height: 225,
+  },
+  textContainer: {
+    paddingHorizontal: 20,
+  },
+  primaryButton: {
+    width: 290,
+    height: 50,
+    backgroundColor: colors.primary,
+    borderRadius: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  arrowContainer: {
+    width: 50,
+    height: 50,
+    backgroundColor: colors.secondary,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  // Products Component
+  productCard: {
+    width: "100%",
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
     },
-
-    textContainer: {
-
-        paddingHorizontal: 20,
-
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginVertical: 12.5,
+  },
+  productDescription: {
+    width: "100%",
+    padding: 20,
+    borderTopColor: colors.lightGray,
+    borderTopWidth: 1,
+  },
+  priceContainer: {
+    flexDirection: "row",
+    marginTop: 10,
+  },
+  // Search container
+  inputContainer: {
+    width: "100%",
+    height: 60,
+    marginVertical: 12.5,
+    paddingVertical: 10,
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
     },
-
-    primaryButton: {
-
-        width: 290,
-        height: 50,
-        backgroundColor: colors.primary,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        borderRadius: 10
-
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    alignItems: "center",
+  },
+  searchInput: {
+    width: "90%",
+    height: 40,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.bottomLine,
+  },
+  // Product Details
+  detailContainer: {
+    backgroundColor: colors.white,
+    padding: 20,
+  },
+  detailCard: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: colors.white,
+    borderRadius: 20,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
     },
-
-    arrowContainer: {
-
-        height: 50,
-        width: 50,
-        backgroundColor: colors.secondary,
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
-        alignItems: "center",
-        justifyContent: "center",
-
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    justifyContent: "space-around",
+    padding: 20,
+  },
+  productImageContainer: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: colors.lightGray,
+    alignItems: "center",
+    borderRadius: 20,
+  },
+  productImage: {
+    width: 220,
+    height: 220,
+  },
+  scrollTextContainer: {
+    marginVertical: 20,
+    padding: 20,
+    borderWidth: 0.5,
+    borderColor: colors.lightGray,
+    borderRadius: 10,
+  },
+  gobackContainer: {
+    width: 290,
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginVertical: 10,
+  },
+  // Button  component
+  buttonTextContainer: {
+    flex: 1,
+    alignItems: "center",
+  },
+  // Login
+  loginCard: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: colors.white,
+    borderRadius: 20,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
     },
-
-    scrollContainer: {
-
-        padding: 10,
-        
-    },
-
-    productCard: {
-
-        width: "100%",
-        backgroundColor: colors.white,
-        borderRadius: 10,
-        shadowColor: colors.black,
-        shadowOffset: {
-
-            width: 0,
-            height: 2,
-
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        marginVertical: 10,
-        alignItems: "center",
-        justifyContent: "space-around"
-
-    },
-
-    productDescription: {
-
-        width: "100%",
-        padding: 20,
-        borderTopColor: colors.lightGray,
-        borderTopWidth: 1
-
-    }, 
-
-    priceContainer: {
-
-        flexDirection: 'row',
-        marginTop: 10
-
-    },
-
-    productImage: {
-
-        width: 140,
-        height: 140,
-        margin: 16,
-
-    },
-
-    inputContainer: {
-
-        width: "100%",
-        height: 60,
-        backgroundColor: colors.white,
-        borderRadius: 10,
-        shadowColor: colors.black,
-        shadowOffset: {
-
-            width: 0,
-            height: 2,
-
-        },
-
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        alignItems: "center",
-        marginVertical: 12.5,
-        paddingVertical: 10
-
-    },
-
-    searchInput: {
-
-        width: "90%",
-        height: 40,
-        borderBottomWidth: 0.5,
-        borderBottomColor: colors.borderGray,
-
-    }
-
-    ,
-
-    detailContainer: {
-
-        backgroundColor: colors.white,
-        padding: 20,
-    },
-
-    detailCard: {
-
-        width: "100%",
-        height: "100%",
-        backgroundColor: colors.white,
-        borderRadius: 20,
-        shadowColor: colors.black,
-        shadowOffset: {
-
-            width: 0,
-            height: 2,
-
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        justifyContent: "space-around",
-        padding: 20,
-
-    },
-
-    productImageContainer: {
-
-        width: "100%",
-        borderWidth: 1,
-        borderColor: colors.lightGray,
-        alignItems: "center",
-        borderRadius: 20,
-
-    },
-
-    productImageDetail: {
-     
-        width: 220,
-        height: 220,
-        
-    },
-
-    goBackContainer: {
-
-        width: 290,
-        flexDirection: "row",
-        alignItems: "center",
-        marginVertical: 10,
-        justifyContent: "flex-start"
-    },
-    
-    scrollTextContainer: {
-
-        marginVertical: 20,
-        padding: 20,
-        borderWidth: 0.5,
-        borderRadius: 10,
-        borderColor: colors.lightGray,
-
-    }
-
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  form: {
+    marginVertical: 10,
+  },
+  passwordGroup: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 25,
+  },
+  textInput: {
+    width: 290,
+    height: 50,
+    borderWidth: 1,
+    borderColor: colors.mediumGray,
+    borderRadius: 10,
+    padding: 10,
+  },
+  toggle: {
+    marginLeft: -50,
+  },
 });
 
 const nav = StyleSheet.create({
-
-    leftText: {
-
-        color: colors.white,
-        fontWeight: "bold",
-        marginLeft: 20,
-
-    },
-
-    drawer: {
-
-        marginRight: 20,
-    },
-
-    options: {
-
-        width: deviceWidth,
-        height: 120,
-        backgroundColor: colors.primary,
-        marginTop: 125,
-        marginRight: -20,
-        padding: 20,
-        justifyContent: "space-between"
-
-    },
-
-    option: {
-
-        paddingVertical: 5,
-    },
-
-    textOption: {
-
-        color: colors.white,
-        textTransform: "uppercase",
-
-    },
-
-    textActive: {
-
-        fontWeight: "bold",
-    }
-
-
+  leftText: {
+    color: colors.white,
+    fontWeight: "bold",
+    marginLeft: 20,
+  },
+  drawer: {
+    marginRight: 20,
+  },
+  options: {
+    width: deviceWidth,
+    height: 120,
+    backgroundColor: colors.primary,
+    marginTop: 125,
+    marginRight: -20,
+    padding: 20,
+    justifyContent: "space-between",
+  },
+  option: {
+    paddingVertical: 5,
+  },
+  textOption: {
+    color: colors.white,
+    textTransform: "uppercase",
+  },
+  textActive: {
+    fontWeight: "bold",
+  },
+  logoutBtn: {
+    width: 60,
+    height: 30,
+    borderWidth: 1,
+    borderColor: colors.white,
+    borderRadius: 10,
+    marginRight: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
 export { colors, theme, text, nav };

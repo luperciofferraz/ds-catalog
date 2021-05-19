@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ds-catalog",
-    "slug": "ds-catalog",
+    "name": "ds-catalog-v1",
+    "slug": "ds-catalog-v1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
